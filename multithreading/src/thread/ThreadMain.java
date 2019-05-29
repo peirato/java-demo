@@ -2,7 +2,7 @@ package thread;
 
 /**
  * @author peirato.
- * @date 2019/5/2722:57
+ * @date 2019/5/27 22:57
  * @description:
  */
 public class ThreadMain {

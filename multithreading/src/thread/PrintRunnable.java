@@ -2,7 +2,7 @@ package thread;
 
 /**
  * @author peirato.
- * @date 2019/5/2723:03
+ * @date 2019/5/27 23:03
  * @description:
  */
 public class PrintRunnable implements Runnable {
