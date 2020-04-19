@@ -1,3 +1,7 @@
+/**
+ * 数组
+ * @param <T>
+ */
 public class GenericArray<T> {
 
     private T[] data;
@@ -66,8 +70,11 @@ public class GenericArray<T> {
             resize(size * 2);
         }
 
-        for(int i=index;i<size;i++){
-            data[i+1] = data[i];
+//        for(int i=index;i<size;i++){
+//            data[i+1] = data[i];
+//        }
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
         }
 
         data[index] = e;
@@ -75,7 +82,19 @@ public class GenericArray<T> {
 
     }
 
-    //TODO
+    public T remove(int index){
+        checkIndex(index);
+
+        T e = data[index];
+
+        for(int i = index;i<size-1;i++){
+            data[index] = data[index+1];
+        }
+        size--;
+
+        return e;
+
+    }
 
     private void resize(int capacity) {
         T[] newData = (T[]) new Object[capacity];
@@ -85,6 +104,11 @@ public class GenericArray<T> {
 
         data = newData;
 
+        // 缩容
+        if (size == data.length / 4 && data.length / 2 != 0) {
+            resize(data.length / 2);
+        }
+
     }
 
     private boolean checkIndex(int index) {
@@ -92,5 +116,10 @@ public class GenericArray<T> {
             return true;
         }
         throw new IllegalArgumentException("");
+    }
+
+
+    public static void main(String[] args) {
+        //TODO
     }
 }
