@@ -19,6 +19,11 @@ import java.util.Map;
 public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
 
     /**
+     * 客户端信道数组
+     */
+    static private final ChannelGroup CHANNEL_GROUP = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+
+    /**
      * 用户字典
      */
     static private final Map<Integer, User> USER_MAP = new HashMap<>();
