@@ -28,5 +28,5 @@ director用于控制如果构建产品，也就是负责整体的算法，通常
     volatile
   
 - oom-test:
- 模拟各种堆和栈的OOM和SOF异常
+ 模拟各种内存区域的OOM场景
     
