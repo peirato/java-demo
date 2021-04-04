@@ -26,5 +26,7 @@ director用于控制如果构建产品，也就是负责整体的算法，通常
     synchronized
     原子性和易变性
     volatile
-    
+  
+- oom-test:
+ 模拟各种堆和栈的OOM和SOF异常
     
