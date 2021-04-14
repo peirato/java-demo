@@ -1,4 +1,4 @@
-package com.peirato.demo;
+package com.peirato.demo.reflection;
 
 /**
  * @Classname TestClass

@@ -1,4 +1,4 @@
-package com.peirato.demo;
+package com.peirato.demo.reflection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * @Date 2021/4/14 2:35 下午
  * @Created by yangzeqi
  */
-public class Application {
+public class Run {
 
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, InstantiationException, IllegalAccessException {
         getClazz();
@@ -25,14 +25,14 @@ public class Application {
         Class<TargetObject> clazz = TargetObject.class;
         System.out.println("clazz :" + clazz.getName());
 
-        Class<?> clazz2 = Class.forName("com.peirato.demo.TargetObject");
+        Class<?> clazz2 = Class.forName("com.peirato.demo.reflection.TargetObject");
         System.out.println("clazz2 :" + clazz2.getName());
 
         TargetObject targetObject = new TargetObject();
         System.out.println("clazz3 :" + targetObject.getClass().getName());
 
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        Class<?> clazz4 = classLoader.loadClass("com.peirato.demo.TargetObject");
+        Class<?> clazz4 = classLoader.loadClass("com.peirato.demo.reflection.TargetObject");
         System.out.println("clazz4 :"+clazz4.getName());
 
     }
@@ -40,7 +40,7 @@ public class Application {
     public static void runMethod() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
         
         // 获取class对象和创建实例
-        Class<?> clazz = Class.forName("com.peirato.demo.TargetObject");
+        Class<?> clazz = Class.forName("com.peirato.demo.reflection.TargetObject");
         TargetObject targetObject = (TargetObject) clazz.newInstance();
 
         // 获取全部方法
