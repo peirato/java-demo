@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MybatisDemoRun {
+public class MybatisDemoTest {
 
     @Test
     public void testFindUserById1() throws IOException {
@@ -21,6 +21,7 @@ public class MybatisDemoRun {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
+        // 直接读取xml文件的方式
         User o = (User)session.selectOne("com.peirato.demo.mapper.UserMapper.findUserById", 2);
 
         System.out.println(o);
